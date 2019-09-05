@@ -13,6 +13,7 @@ class Category(models.Model):
 class Tutorial(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
+    min_read = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     category = models.ManyToManyField(Category)
