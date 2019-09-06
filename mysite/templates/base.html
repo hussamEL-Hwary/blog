@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <title>{% block title%}{% endblock %}</title>
+</head>
+<body>
+
+
+
+    <main class="container">
+        <div class="row">
+        
+        <div class="col-md-10">
+            <h1 class="text-center">Hossam's Blog</h1>
+
+            <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                      <!-- Brand and toggle get grouped for better mobile display -->
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                      </div>
+                  
+                      <!-- Collect the nav links, forms, and other content for toggling -->
+                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav nav-list-edit">
+                            <li><a class="navbar-brand nav-edit" href="{% url 'blog:homepage'  %}">Blog posts</a></li> 
+                            <li><a class="navbar-brand nav-edit" href="#">Who am I?</a></li>  
+                            <li><a class="navbar-brand nav-edit" href="{%url 'blog:message'%}">Contact me</a></li>
+                            <li><a class="navbar-brand nav-edit" href="#">Login</a></li>
+                        </ul>
+                      </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                  </nav>
+    
+        </div>
+        
+        </div>
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+    
+    <!-- Footer -->
+<footer class="page-footer font-small">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="https://github.com/hussamEL-Hwary"> Hossam</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+
+    <script src="{% static "tinymce/js/prism.js" %}"></script>
+</body>
+</html>
