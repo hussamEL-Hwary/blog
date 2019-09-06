@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Hossam El-Hwary{% endblock %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <h2 class="text-center">{{tutorial.title}}</h2>
+            <section>
+                {{tutorial.content | safe}}
+            </section>
+            </div>
+    </div>
+
+    <div class="col-md-4">
+        {% include 'categories_block.html' %}
+
+    </div>
+
+</div>
+{% endblock%}

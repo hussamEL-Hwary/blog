@@ -1,0 +1,9 @@
+<h4 class="text-center category">Categories</h4>
+<section class="categry-tags">
+  <ul class="tags">
+    {% for category in categories %}
+    <li><a href="{% url 'blog:category_posts' category.category_slug%}" class="badge badge-dark"> {{category.name}}</a></li>
+    {% endfor %}
+  </ul>
+
+</section>

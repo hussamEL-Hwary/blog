@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Hossam El-Hwary{% endblock %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+        <h2 class="text-center">{{category.name}} POSTS ({{tut_count}})</h2>
+        {% for aricle in related_tutorials %}
+        <div class="card mb-3 post-card">
+                <div class="row no-gutters">
+                  <div class="col-md-2">
+                    <img src="static/imgs/blog-post-thumb-3.jpg" class="card-img img-responsive post-img" alt="...">
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body">
+                      <a href="{% url 'blog:post' aricle.pk%}"> <h3 class="card-title post-title">{{aricle.title}}</h3></a>
+                      <p class="card-text">
+                        <small class="text-muted">Last updated {{aricle.updated_at}}</small>
+                        <small class="text-muted">{{aricle.min_read}} min read</small>
+                        <a href="#"> <span class="text-muted">3 comments</span> </a>
+                      </p>
+                      <p class="card-text">
+                        {{aricle.content | slice:":400" |safe}}...
+                      </p>
+                      <a class="more-link" href="{% url 'blog:post' aricle.pk%}">Read more &rarr;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {% endfor %}
+
+
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      {% include 'categories_block.html' %}
+
+    </div>
+        
+        
+
+</div>
+
+
+{% endblock %}
