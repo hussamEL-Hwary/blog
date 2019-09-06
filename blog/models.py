@@ -21,3 +21,12 @@ class Tutorial(models.Model):
 
     def __str__(self):
         return self.title
+
+class Message(models.Model):
+    author = models.CharField(max_length=60, default="visitor")
+    email = models.CharField(max_length=120)
+    body = models.TextField()
+
+    def __str__(self):
+        return self.author
+
