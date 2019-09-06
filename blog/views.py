@@ -8,7 +8,7 @@ def homepage(request):
     '''
     blog home page with the latest 6 posts and categories
     Args:
-        request
+        request: request
     Returns:
         list: latest posts
         list: blog categories
@@ -21,8 +21,17 @@ def homepage(request):
     return render(request, 'home.html',context=context)
 
 
-# get post by id
 def blog_post(request, post_id):
+    '''
+    get post by id
+    Args:
+        request: request
+        int: post id
+    Returns:
+        object: post
+
+    TODO: handel unfound post
+    '''
     categories = Category.objects.all()
     # TODO: raise an error when there is no post id
     tutorial = Tutorial.objects.get(pk=post_id)
