@@ -3,10 +3,16 @@ from django.http import HttpResponse
 from .models import Category, Tutorial, Message
 from .forms import MessageForm
 
-# Create your views here.
-# get latest 6 posts
-# get all categories
+
 def homepage(request):
+    '''
+    blog home page with the latest 6 posts and categories
+    Args:
+        request
+    Returns:
+        list: latest posts
+        list: blog categories
+    '''
     categories = Category.objects.all()
     latest_items = Tutorial.objects.all().order_by('-updated_at')[:6]
     context = {
