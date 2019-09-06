@@ -8,7 +8,7 @@ def homepage(request):
     '''
     blog home page with the latest 6 posts and categories
     Args:
-        request: request
+        object: request
     Returns:
         list: latest posts
         list: blog categories
@@ -25,7 +25,7 @@ def blog_post(request, post_id):
     '''
     get post by id
     Args:
-        request: request
+        object: request
         int: post id
     Returns:
         object: post
@@ -44,7 +44,7 @@ def category_posts(request, slug):
     '''
     get posts related to category
     Args:
-        request: request
+        object: request
         string: category slug
     Returns:
         list: posts in the category
@@ -64,6 +64,13 @@ def category_posts(request, slug):
 
 
 def visitor_message(request):
+    '''
+    visitors messages
+    Args:
+        object: request
+    Returns:
+        object: message form
+    '''
     form = MessageForm()
     if request.method == 'POST':
         # save message
