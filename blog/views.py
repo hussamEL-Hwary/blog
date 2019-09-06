@@ -38,9 +38,20 @@ def blog_post(request, post_id):
     context = {'tutorial': tutorial, 
                'categories': categories}
     return render(request, 'post.html', context=context)
-    
+
 
 def category_posts(request, slug):
+    '''
+    get posts related to category
+    Args:
+        request: request
+        string: category slug
+    Returns:
+        list: posts in the category
+        list: all categories
+        int: number of posts in that category
+    TODO: Handle unfound slug  
+    '''
     category = Category.objects.get(category_slug=slug)
     related_tutorials = Tutorial.objects.filter(category=category).all()
     categories = Category.objects.all()
