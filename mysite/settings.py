@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',   
     'blog.apps.BlogConfig',
     'tinymce',
+    'social_django',
 ]
 
 MIDDLEWARE = [
