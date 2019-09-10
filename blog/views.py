@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Category, Tutorial, Message
-from .forms import MessageForm
+from .models import Category, Tutorial, Message, Comment
+from .forms import MessageForm, CommentForm
 
 
 def homepage(request):
@@ -35,8 +35,29 @@ def blog_post(request, post_id):
     categories = Category.objects.all()
     # TODO: raise an error when there is no post id
     tutorial = Tutorial.objects.get(pk=post_id)
+    # comments related to post
+    post_comments = Comment.objects.filter(tutorial__pk=tutorial.pk).all() 
+    form = CommentForm()
+    if request.method == 'POST':
+        if not request.user.is_authenticated:
+            return redirect('blog:login')
+
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            print(request.user)
+            comment = Comment(
+                content=form.cleaned_data["comment"],
+                tutorial=tutorial,
+                user=request.user
+            )
+            comment.save()
+            tutorial.commented()
+            return redirect('blog:post', post_id=tutorial.pk)
     context = {'tutorial': tutorial, 
-               'categories': categories}
+               'categories': categories,
+               'form': form, 
+               'comments':post_comments
+               }
     return render(request, 'post.html', context=context)
 
 
@@ -56,7 +77,7 @@ def category_posts(request, slug):
     related_tutorials = Tutorial.objects.filter(category=category).all()
     categories = Category.objects.all()
     tut_count = len(related_tutorials)
-    context = {'related_tutorials': related_tutorials,
+    context = {'latest_items': related_tutorials,
                 'categories': categories,
                 'category': category,
                 'tut_count': tut_count}
@@ -85,3 +106,7 @@ def visitor_message(request):
             return redirect("blog:homepage")
 
     return render(request, 'contact_me.html', context={"form": form})
+
+
+def login(request):
+    return render(request, 'login.html')
