@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Hossam El-Hwary{% endblock %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        
+        <a href="{% url 'social:begin' 'github' %}" class="btn btn-block btn-social btn-github">
+            <span class="fa fa-github"></span> Sign in with Github
+        </a>
+          
+        <a href="{% url 'social:begin' 'facebook'%}" class="btn btn-block btn-social btn-facebook">
+            <span class="fa fa-facebook"></span> Sign in with Facebook
+        </a>
+     
+    </div>
+    <div class="col-md-3"></div>
+
+</div>
+</div>
+{% endblock %}
