@@ -1,0 +1,24 @@
+{% for aricle in latest_items %}
+<div class="card mb-3 post-card">
+        <div class="row no-gutters">
+          <div class="col-md-2">
+            <img src="static/imgs/blog-post-thumb-3.jpg" class="card-img img-responsive post-img" alt="...">
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <a href="{% url 'blog:post' aricle.pk%}"> <h3 class="card-title post-title">{{aricle.title}}</h3></a>
+              <p class="card-text">
+                <small class="text-muted">Last updated {{aricle.updated_at}}</small>
+                <small class="text-muted">{{aricle.min_read}} min read</small>
+                <a href="#"> <span class="text-muted">{{aricle.comments}} comment{{aricle.comments|pluralize}}</span> </a>
+              </p>
+              <p class="card-text">
+                {{aricle.content | slice:":400" |safe}}...
+              </p>
+              <a class="more-link" href="{% url 'blog:post' aricle.pk%}">Read more &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
