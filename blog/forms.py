@@ -24,3 +24,12 @@ class MessageForm(forms.Form):
             "placeholder": "leave a comment !"
         })
     )
+
+
+class CommentForm(forms.Form):
+    comment = forms.CharField(
+        widget=forms.TextInput(attrs={
+            "class": "form-control",
+            "placeholder": "Leave your comment!"
+        })
+    )
