@@ -21,6 +21,7 @@ class Tutorial(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     category = models.ManyToManyField(Category)
     comments = models.IntegerField(default=0)
+    img_url = models.CharField(max_length=250 ,null=True)
 
     def commented(self):
         self.comments += 1
