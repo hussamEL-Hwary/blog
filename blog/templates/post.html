@@ -18,5 +18,27 @@
 
     </div>
 
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Leave your stuiped comment!</h2>
+            <form accept="{%url 'blog:post' tutorial.pk%}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{form.comment}}
+                </div>
+                {% if user.is_authenticated %}
+                <button type="submit" class="btn btn-primary">Submit</button>
+                {%else%}
+                    <a href="{%url 'blog:login'%}">Login</a><p>to comment</p>
+                {%endif%}
+            </form>
+            {%for comment in comments%}
+            <h3> {{comment.content}} </h3>
+            <h1> {{comment.user.username}} </h1>
+        {%endfor%}
+        </div>
+
+    </div>
+
 </div>
 {% endblock%}
