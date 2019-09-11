@@ -14,7 +14,7 @@ def homepage(request):
         list: blog categories
     '''
     categories = Category.objects.all()
-    latest_items = Tutorial.objects.all().order_by('-updated_at')[:6]
+    latest_items = Tutorial.objects.all().order_by('-created_at')[:6]
     context = {
         'latest_items': latest_items, 
         'categories': categories}
