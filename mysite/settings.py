@@ -24,7 +24,7 @@ SECRET_KEY = 'y@8-4r%-97jyu057%38ii+azx*3@n6iedcgf@lvks+9#kx7wdv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://hossam-hwary.herokuapp.com/']
+ALLOWED_HOSTS = ['https://hossam-hwary.herokuapp.com']
 
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
