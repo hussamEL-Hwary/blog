@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Category, Tutorial, Message, Comment
 from .forms import MessageForm, CommentForm
-
+from ratelimit.decorators import ratelimit
+from django.http import Http404
 
 def homepage(request):
     '''
@@ -29,12 +30,12 @@ def blog_post(request, post_id):
         int: post id
     Returns:
         object: post
-
-    TODO: handel unfound post
     '''
     categories = Category.objects.all()
-    # TODO: raise an error when there is no post id
-    tutorial = Tutorial.objects.get(pk=post_id)
+    try:
+        tutorial = Tutorial.objects.get(pk=post_id)
+    except Tutorial.DoesNotExist:
+        raise Http404
     # comments related to post
     post_comments = Comment.objects.filter(tutorial__pk=tutorial.pk).all() 
     form = CommentForm()
