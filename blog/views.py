@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from .models import Category, Tutorial, Message, Comment
 from .forms import MessageForm, CommentForm
 from ratelimit.decorators import ratelimit
-from django.http import Http404
 
 def homepage(request):
     '''
@@ -72,9 +71,11 @@ def category_posts(request, slug):
         list: posts in the category
         list: all categories
         int: number of posts in that category
-    TODO: Handle unfound slug  
     '''
-    category = Category.objects.get(category_slug=slug)
+    try:
+        category = Category.objects.get(category_slug=slug)
+    except Category.DoesNotExist:
+        raise Http404
     related_tutorials = Tutorial.objects.filter(category=category).all()
     categories = Category.objects.all()
     tut_count = len(related_tutorials)
@@ -109,5 +110,6 @@ def visitor_message(request):
     return render(request, 'contact_me.html', context={"form": form})
 
 
+# Login endpoint
 def login(request):
     return render(request, 'login.html')
