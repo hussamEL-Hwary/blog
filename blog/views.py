@@ -86,6 +86,7 @@ def category_posts(request, slug):
     return render(request, 'category_posts.html', context=context)
 
 
+@ratelimit(key='ip', rate='100/h', block=True)
 def visitor_message(request):
     '''
     visitors messages
