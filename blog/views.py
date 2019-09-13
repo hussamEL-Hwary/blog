@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from .models import Category, Tutorial, Message, Comment
 from .forms import MessageForm, CommentForm
 from ratelimit.decorators import ratelimit
