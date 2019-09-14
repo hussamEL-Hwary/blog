@@ -3,6 +3,7 @@ from django.http import HttpResponse, Http404
 from .models import Category, Tutorial, Message, Comment
 from .forms import MessageForm, CommentForm
 from ratelimit.decorators import ratelimit
+from django.contrib import messages
 
 def homepage(request):
     '''
@@ -106,6 +107,7 @@ def visitor_message(request):
                 body=form.cleaned_data["body"]
             )
             message.save()
+            messages.add_message(request, messages.SUCCESS, 'Thanks! message delivered successfully')
             return redirect("blog:homepage")
 
     return render(request, 'contact_me.html', context={"form": form})
