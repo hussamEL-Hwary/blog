@@ -14,14 +14,14 @@ class MessageForm(forms.Form):
         required=False,
          widget=forms.EmailInput(attrs={
             "class": "form-control",
-            "placeholder": "Mail"
+            "placeholder": "Mail not required"
         })
     )
 
     body = forms.CharField(
         widget=forms.Textarea(attrs={
             "class": "form-control",
-            "placeholder": "leave a comment !"
+            "placeholder": "Write your message :)"
         })
     )
 
