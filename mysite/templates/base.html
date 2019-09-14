@@ -58,6 +58,44 @@
         </div>
         
         </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+
+                    {% if message.tags == "info"%}
+                    <div class="isa_info">
+                        <i class="fa fa-info-circle"></i>
+                        {{message}}
+                    </div>
+                    {%elif message.tags == "success"%}
+                    <div class="isa_success">
+                        <i class="fa fa-check"></i>
+                        {{message}}
+                   </div>
+                    {% elif message.tags == "warning"%}
+                    <div class="isa_warning">
+                        <i class="fa fa-warning"></i>
+                        {{message}}
+                   </div>
+                    {%elif message.tags == "error"%}
+                    <div class="isa_error">
+                        <i class="fa fa-times-circle"></i>
+                        {{message}}
+                     </div>
+                     {% endif %}
+                    
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+        </div>
         {% block content %}
 
         {% endblock %}
