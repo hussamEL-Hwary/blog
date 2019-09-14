@@ -5,6 +5,10 @@ html {
     width: 100%;
     min-height: 100vh;
     position: relative;
+    background: #DAE3E7;
+    font-family: 'Lato', arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
   }
 
 
@@ -87,7 +91,348 @@ html {
     width: 100%;
 }
 
+/*=========header image======*/
 .center-items{
     display: flex;
     justify-content: center;
 }
+
+
+.header .profile-image {
+    margin-right: 30px;
+    height: 190px;
+    width: 180px;
+  }
+
+.float-left {
+    float: left!important;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*=======header======*/
+.header{
+    background: #f5f5f5;
+}
+.header .profile-content .name {
+    color: #49515a;
+    font-size: 38px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+}
+
+.header .profile-content .desc {
+    color: #778492;
+    font-family: "Lato", arial, sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+
+.header .profile-content .social a {
+    background: #b0b7bf;
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    color: #fff;
+    text-align: center;
+  }
+
+  .header .profile-content .social a:hover {
+    background: #778492;
+  }
+  
+  .header .profile-content .social a .svg-inline--fa {
+    font-size: 20px;
+    margin-top: 8px;
+  }
+
+  .header .btn {
+    margin-top: 60px;
+    font-weight: bold;
+  }
+
+  .contact-btn{
+    margin-right: 45px;
+  }
+
+/*=======sections==========*/
+  .sections-wrapper {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  .section .section-inner {
+    background: #fff;
+    padding: 30px;
+  }
+  
+  .section .heading {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #545e69;
+    font-size: 24px;
+  }
+
+  .me-head-text{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        color: #778492;
+      }
+  
+
+
+/* Info Section */
+.info .svg-inline--fa {
+    margin-right: 15px;
+    color: #ccd1d6;
+  }
+  
+  .info .svg-inline--fa.fa-envelope-o {
+    font-size: 14px;
+  }
+  
+  .info ul {
+    margin-bottom: 0;
+  }
+  
+  .info li {
+    margin-bottom: 15px;
+  }
+  
+  .info li:last-child {
+    margin-bottom: 0;
+  }
+
+  .aside .subheading {
+    font-size: 18px;
+    color: #545e69;
+  }
+
+  .header .profile-content .social a .fa {
+    font-size: 20px;
+    padding-top: 8px;
+  }
+
+
+  /* Skills Section */
+.skills .intro {
+    margin-bottom: 30px;
+  }
+  
+  .skills .skillset .item {
+    margin-bottom: 30px;
+  }
+  
+  .skills .skillset .level-title {
+    font-size: 16px;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 10;
+  }
+  
+  .skills .skillset .level-title .level-label {
+    color: #ccd1d6;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Lato", arial, sans-serif;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .skills .skillset .level-bar {
+    height: 15px;
+    background: #e8e8e8;
+  }
+  
+  .skills .skillset .level-bar-inner {
+    height: 15px;
+    background: #66cb8c;
+  }
+  
+  .skills .svg-inline--fa {
+    margin-right: 3px;
+    position: relative;
+    top: -1px;
+  }
+
+  /* Education section */
+.education .item {
+    margin-bottom: 30px;
+  }
+  
+  .education .item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .education .item .title {
+    font-size: 16px;
+    margin-top: 0;
+  }
+  
+  .education .item .university {
+    font-family: "Lato", arial, sans-serif;
+    font-size: 13px;
+    color: #999;
+    font-weight: 600;
+    padding-left: 25px;
+  }
+  
+  .education .item .university .year {
+    color: #b0b7bf;
+    font-weight: 500;
+  }
+
+
+
+/* About Section */
+/* Latest Section */
+.latest .item {
+    margin-bottom: 30px;
+  }
+  
+  .latest .item .title {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  
+  .latest .item .title .label {
+    margin-left: 5px;
+    font-size: 12px;
+  }
+  
+  .latest .item .title a {
+    color: #778492;
+  }
+  
+  .latest .item .title a:hover {
+    color: #5f6b77;
+  }
+  
+  .latest .item .project-image:hover {
+    -webkit-opacity: 0.8;
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+  }
+  
+  .latest .divider {
+    margin-bottom: 60px;
+  }
+  
+  .latest .featured {
+    margin-bottom: 60px;
+  }
+  
+  .latest .featured .title {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+  
+  .latest .featured .summary {
+    margin-bottom: 30px;
+    color: #778492;
+  }
+  
+  .latest .featured img {
+    margin-bottom: 30px;
+  }
+  
+  .latest .featured .desc {
+    margin-bottom: 30px;
+  }
+  
+  .latest .has-ribbon {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .latest .has-ribbon .text {
+    background: #3AAA64;
+    color: #fff;
+  }
+  
+  .latest .has-ribbon .ribbon {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+  }
+  
+  .latest .has-ribbon .ribbon .text {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    left: -8px;
+    top: 18px;
+    width: 158px;
+    padding: 10px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #479FC8;
+    -webkit-transform: rotate(45deg) translate3d(0, 0, 0);
+    -moz-transform: rotate(45deg) translate3d(0, 0, 0);
+    -ms-transform: rotate(45deg) translate3d(0, 0, 0);
+    -o-transform: rotate(45deg) translate3d(0, 0, 0);
+  }
+  
+  .latest .has-ribbon .ribbon .text:before, .latest .has-ribbon .ribbon .text:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    border-top: 5px solid #276582;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+  }
+  
+  .latest .has-ribbon .ribbon .text:before {
+    left: 0;
+  }
+  
+  .latest .has-ribbon .ribbon .text:after {
+    right: 0;
+  }
+  
+  /* Projects Section */
+  .projects .item {
+    margin-bottom: 30px;
+  }
+  
+  .projects .item .title {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+  
+  .projects .item .title a {
+    color: #778492;
+  }
+  
+  .projects .item .title a:hover {
+    color: #5f6b77;
+  }
+  
