@@ -13,6 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/github-activity.css' %}" />
     <link rel="stylesheet" href="{% static 'css/bootstrap-social.css' %}" />
     <title>{% block title%}{% endblock %}</title>
 </head>
@@ -42,7 +43,7 @@
                       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav nav-list-edit">
                             <li><a class="navbar-brand nav-edit" href="{% url 'blog:homepage'  %}">Blog posts</a></li> 
-                            <li><a class="navbar-brand nav-edit" href="#">Who am I?</a></li>  
+                            <li><a class="navbar-brand nav-edit" href="{% url 'blog:aboutme'%}">Who am I?</a></li>  
                             <li><a class="navbar-brand nav-edit" href="{%url 'blog:message'%}">Contact me</a></li>
                             {%if user.is_authenticated%}
                             <li><a class="navbar-brand nav-edit" href="{% url 'logout'%}">Logout</a></li>
@@ -75,6 +76,12 @@
   </footer>
   <!-- Footer -->
 
-    <script src="{% static "tinymce/js/prism.js" %}"></script>
+    <script src="{% static 'tinymce/js/prism.js' %}"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/github-activity.js' %}"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script>
+      GitHubActivity.feed({ username: "hussamEL-Hwary", selector: "#feed" });
+    </script>
 </body>
 </html>
