@@ -114,3 +114,8 @@ def visitor_message(request):
 # Login endpoint
 def login(request):
     return render(request, 'login.html')
+
+
+# about me page
+def about_me(request):
+    return render(request, 'who_am_i.html')
