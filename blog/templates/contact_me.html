@@ -4,6 +4,7 @@
 
 {% block content %}
 <div class="row">
+    <div class="col-md-2"></div>
     <div class="col-md-8">
         <div class="row">
         <h2 class="text-center">Leave Your message</h2>
@@ -13,19 +14,22 @@
                     {{ form.author }}
                 </div>
                 <div class="form-group">
+                    <label>Type your mail to contact you</label>
                         {{ form.email }}
                     </div>
                 <div class="form-group">
                     {{ form.body }}
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div style="text-align: center;">
+                <button type="submit" class="btn btn-success">Submit</button>
+                </div>
         </form>
 
 
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-2"></div>
       
 
     </div>
