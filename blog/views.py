@@ -21,7 +21,6 @@ def homepage(request):
         ip = x_forwarded_for.split(',')[-1].strip()
     else:
         ip = request.META.get('REMOTE_ADDR')
-    ip="197.35.226.89"
     g = GeoIP2()
     lat_long = g.lat_lon('197.35.226.89')
     visitor = VisitorInfo(country=g.country(ip)['country_name'], 
