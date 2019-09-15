@@ -194,3 +194,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #import django_heroku
 #django_heroku.settings(locals())
+GEOIP_PATH = os.path.join(BASE_DIR, 'blog/GeoLite2')
+GEOIP_COUNTRY = "GeoLite2-Country.mmdb"
+GEOIP_CITY = "GeoLite2-City.mmdb"

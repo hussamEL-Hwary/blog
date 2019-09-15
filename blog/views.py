@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
-from .models import Category, Tutorial, Message, Comment
+from .models import Category, Tutorial, Message, Comment, VisitorInfo
 from .forms import MessageForm, CommentForm
 from ratelimit.decorators import ratelimit
 from django.contrib import messages
+from django.contrib.gis.geoip2 import GeoIP2
 
 def homepage(request):
     '''
@@ -14,6 +15,23 @@ def homepage(request):
         list: latest posts
         list: blog categories
     '''
+    # Get visitor info
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[-1].strip()
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    ip="197.35.226.89"
+    g = GeoIP2()
+    lat_long = g.lat_lon('197.35.226.89')
+    visitor = VisitorInfo(country=g.country(ip)['country_name'], 
+                          city=g.city(ip)['city'],
+                          lat=lat_long[0],
+                          longt=lat_long[1],
+                          ip=ip
+                          )
+    visitor.save()
+
     categories = Category.objects.all()
     latest_items = Tutorial.objects.all().order_by('-created_at')[:6]
     context = {
