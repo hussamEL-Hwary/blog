@@ -23,6 +23,9 @@ html {
     margin-left: 25%;
 }
 
+.nav-margin {
+  margin-top: 2%;
+}
 
 .post-icon {
     height: 123px;
@@ -100,8 +103,9 @@ html {
 
 .header .profile-image {
     margin-right: 30px;
-    height: 190px;
     width: 180px;
+    margin-bottom: 5px;
+    margin-top: 5px;
   }
 
 .float-left {
