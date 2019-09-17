@@ -1,10 +1,10 @@
 {% extends 'base.html'%}
 {%block title%} Hossam El-Hwary {% endblock %}
-
+{% load static %}
 {% block content %}
     <header class="header">
         <div class="container">
-                <img class="img-responsive profile-image img-fluid float-left img-circle " src="https://i.ibb.co/hC72H21/70377660-422076051751174-9088062330599636992-n.jpg" alt="Hossam" />
+                <img class="img-responsive profile-image img-fluid float-left img-circle " src="{% static 'imgs/avatar.jpg' %}" alt="Hossam" />
                
                 <div class="profile-content float-left">
                         <h1 class="name custom-heading">Hossam EL-Hwary</h1>
@@ -17,8 +17,9 @@
 
                 </div>
 
-                <a class="btn btn-success pull-right contact-btn" href="#" target="_blank"><i class="fa fa-paper-plane"></i> Contact Me</a>  
+                <a class="btn btn-success pull-right contact-btn" href="mailto:hossam.elhwary1996@gmail.com" target="_blank"><i class="fa fa-paper-plane"></i> Contact Me</a>  
         </div>
+
     </header>
 
     <div class="container sections-wrapper">
@@ -28,13 +29,16 @@
                     <div class="section-inner">
                         <h2 class="heading me-head-text custom-heading">About Me</h2>
                         <div class="content">
+                            <p>
+                                    Hi, I'm Hossam. I spend most of my time writing code and I love this. 
+                                    I care about code organization and quality so I do my best to write efficient 
+                                    code and keep learning technologies that help me to do this.
+
+                            </p>
                                 <p>
-                                    Write a brief intro about yourself. It's a good idea to include your 
-                                    personal interests and hobbies as well. Lorem ipsum dolor sit amet, 
-                                    consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean 
-                                    massa. Cum sociis natoque penatibus et magnis dis parturient montes, 
-                                    nascetur ridiculus mus. Donec quam felis, ultricies nec. Commodo ligula 
-                                    eget dolor. Aenean massa.
+                                        I'm passionate about web development. Every day, I'm trying to learn something which will help me 
+                                        to become successful in my career.
+                                        I also like solving algorithmic challenges on online platforms CodeForces, LeetCode, CodeFights and HackerRank and participating in open source projects
                                 </p>
 
                         </div>
@@ -48,26 +52,27 @@
                             <div class="content">
                                 <hr class="divider" />
                                 <div class="item row">
-                                    <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/instance-bootstrap-portfolio-theme-for-developers/" target="_blank">
-                                    <img class="img-responsive img-fluid project-image" src="http://bryukh.com/assets/images/projects/beamBallScreen.jpg" alt="project name" />
+                                    <a class="col-md-4 col-12" href="#">
+                                    <img class="img-responsive img-fluid project-image" src="{% static 'imgs/Intro.jpg' %}" alt="project name" />
                                     </a>
                                     <div class="desc col-md-8 col-12">
-                                        <h3 class="title custom-heading"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/instance-bootstrap-portfolio-theme-for-developers/" target="_blank">Instance - Bootstrap 4 Portfolio Theme for Aspiring Full Stack Developers</a></h3>
+                                        <h3 class="title custom-heading"><a href="#" target="_blank">Transportation rental service</a></h3>
                                         <p class="mb-2">You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
-                                        <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/instance-bootstrap-portfolio-theme-for-developers/" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
                                     </div><!--//desc-->                          
                                 </div><!--//item-->
 
                                 <hr class="divider" />
                                 <div class="item row">
-                                    <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/devstudio-bootstrap-theme-for-web-development-agencies-and-developers/" target="_blank">
+                                    <a class="col-md-4 col-12" href="#" target="_blank">
                                     <img class="img-responsive img-fluid project-image" src="http://bryukh.com/assets/images/projects/beamBallScreen.jpg" alt="project name" />
                                     </a>
                                     <div class="desc col-md-8 col-12">
-                                        <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/devstudio-bootstrap-theme-for-web-development-agencies-and-developers/" target="_blank">DevStudio - Bootstrap 4 Theme for WebDev Agencies and Freelance Developers</a></h3>
-                                        <p class="mb-2">You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
-                                        <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/devstudio-bootstrap-theme-for-web-development-agencies-and-developers/" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
-                                    </div><!--//desc-->                          
+                                        <h3 class="title"><a href="#" target="_blank">My Blog</a></h3>
+                                        <p class="mb-2">You can put one of your secondary projects here. 
+                                            Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra 
+                                            consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, 
+                                            mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
+                                     </div><!--//desc-->                          
                                 </div><!--//item-->
                                 
                                 
@@ -96,7 +101,7 @@
                                <ul class="list-unstyled">
                                    <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>Cairo, Egypt</li>
                                    <li><i class="fa fa-envelope"></i><span class="sr-only">Email:</span><a href="#">hossam.elhwary1996@gmail.com</a></li>
-                                   <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a href="#">https://hossam-hwary.herokuapp.com</a></li>
+                                   <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a href="https://hossam-hwary.herokuapp.com">https://hossam-hwary.herokuapp.com</a></li>
                                    <li><i class="fa fa-file-pdf-o"></i><span class="sr-only">CV en:</span><a href="#">CV pdf</a></li>
                                </ul>
                            </div><!--//content-->  
@@ -115,13 +120,16 @@
                                     </div><!--//item-->
                                     
                                     <div class="item">
-                                            <h3 class="level-title custom-heading">Flask</h3>                                
+                                            <h3 class="level-title custom-heading">Flask &amp; SQLAlchemy</h3>                                
                                     </div>
 
                                     <div class="item">
-                                        <h3 class="level-title custom-heading">HTML5, CSS, Bootstrap</h3>                                
+                                        <h3 class="level-title custom-heading">HTML5, CSS &amp; Bootstrap</h3>                                
                                     </div><!--//item-->
-         
+                                    
+                                    <div class="item">
+                                        <h3 class="level-title custom-heading">Git &amp; Linux</h3>                                
+                                    </div><!--//item-->
                      
                                 </div>              
                             </div><!--//content-->  
