@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'social_django',   
     'blog.apps.BlogConfig',
     'tinymce',
+     'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
