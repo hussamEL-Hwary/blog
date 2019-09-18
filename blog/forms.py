@@ -29,7 +29,7 @@ class MessageForm(forms.Form):
 class CommentForm(forms.Form):
     comment = forms.CharField(
         widget=forms.TextInput(attrs={
-            "class": "form-control",
+            "class": "form-control comment",
             "placeholder": "Leave your comment!"
         })
     )
