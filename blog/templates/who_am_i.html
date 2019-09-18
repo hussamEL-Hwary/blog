@@ -4,7 +4,7 @@
 {% block content %}
     <header class="header">
         <div class="container">
-                <img class="img-responsive profile-image img-fluid float-left img-circle " src="{% static 'imgs/avatar.jpg' %}" alt="Hossam" />
+                <img class="img-responsive profile-image img-fluid float-left img-circle" src="{% static 'imgs/avatar.jpg' %}" alt="Hossam" />
                
                 <div class="profile-content float-left">
                         <h1 class="name custom-heading">Hossam EL-Hwary</h1>
@@ -53,29 +53,65 @@
                                 <hr class="divider" />
                                 <div class="item row">
                                     <a class="col-md-4 col-12" href="#">
-                                    <img class="img-responsive img-fluid project-image" src="{% static 'imgs/Intro.jpg' %}" alt="project name" />
+                                    <img class="img-responsive img-fluid project-image" src="{% static 'imgs/httprouter.png' %}" alt="HTTP router" />
                                     </a>
                                     <div class="desc col-md-8 col-12">
-                                        <h3 class="title custom-heading"><a href="#" target="_blank">Transportation rental service</a></h3>
-                                        <p class="mb-2">You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
+                                        <h3 class="title custom-heading"><a href="#">HTTPRouter using a trie</a></h3>
+                                        <p class="mb-2">
+                                                Implemented an HTTPRouter like you would find in a web server using the Trie data structure.<br>
+                                                by taking a URL path and figuring out what content to return.    
+                                        </p>
                                     </div><!--//desc-->                          
                                 </div><!--//item-->
 
                                 <hr class="divider" />
                                 <div class="item row">
-                                    <a class="col-md-4 col-12" href="#" target="_blank">
-                                    <img class="img-responsive img-fluid project-image" src="http://bryukh.com/assets/images/projects/beamBallScreen.jpg" alt="project name" />
+                                    <a class="col-md-4 col-12" href="#">
+                                    <img class="img-responsive img-fluid project-image" src="{% static 'imgs/a.png' %}" alt="HTTP router" />
                                     </a>
                                     <div class="desc col-md-8 col-12">
-                                        <h3 class="title"><a href="#" target="_blank">My Blog</a></h3>
-                                        <p class="mb-2">You can put one of your secondary projects here. 
-                                            Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra 
-                                            consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, 
-                                            mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
-                                     </div><!--//desc-->                          
+                                        <h3 class="title custom-heading"><a href="#">Route Planner</a></h3>
+                                        <p class="mb-2">
+                                        Designed and implemented a route planning algorithm to calculate the shortest path
+                                        between two points in map.<br>
+                                        built with python
+
+                                        </p>
+                                    </div><!--//desc-->                          
                                 </div><!--//item-->
-                                
-                                
+
+                                <hr class="divider" />
+                                <div class="item row">
+                                    <a class="col-md-4 col-12" href="#">
+                                    <img class="img-responsive img-fluid project-image" src="{% static 'imgs/trie.png' %}" alt="HTTP router" />
+                                    </a>
+                                    <div class="desc col-md-8 col-12">
+                                        <h3 class="title custom-heading"><a href="#">Auto complete using a trie</a></h3>
+                                        <p class="mb-2">
+                                                Built an auto-complete feature that commonly used on mobile phones or web search.<br> 
+                                                using a trie data structure which I implemented.<br>
+                                                by getting all the word suffixes.
+                                        </p>
+                                    </div><!--//desc-->                          
+                                </div><!--//item-->
+
+                                <hr class="divider" />
+                                <div class="item row">
+                                    <a class="col-md-4 col-12" href="#">
+                                    <img class="img-responsive img-fluid project-image" src="{% static 'imgs/Intro.jpg' %}" alt="project name" />
+                                    </a>
+                                    <div class="desc col-md-8 col-12">
+                                        <h3 class="title custom-heading"><a href="#">Transportation rental service</a></h3>
+                                        <p class="mb-2">
+                                                My graduation project.<br>
+                                                We built a RESTful API that serves an android app using Flask.<br>
+                                                It allows users to rent a transportation service based on their location.
+                                                Transportation categories are Bikes, private cars, winch, and heavy cars.<br>
+                                                I was responsible for developing the REST APIs. 
+                                        </p>
+                                    </div><!--//desc-->                          
+                                </div><!--//item-->
+                                                                
                             </div><!--//content-->  
                         </div><!--//section-inner-->                
                     </section><!--//section-->
@@ -102,7 +138,7 @@
                                    <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>Cairo, Egypt</li>
                                    <li><i class="fa fa-envelope"></i><span class="sr-only">Email:</span><a href="#">hossam.elhwary1996@gmail.com</a></li>
                                    <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a href="https://hossam-hwary.herokuapp.com">https://hossam-hwary.herokuapp.com</a></li>
-                                   <li><i class="fa fa-file-pdf-o"></i><span class="sr-only">CV en:</span><a href="#">CV pdf</a></li>
+                                   <li><i class="fa fa-file-pdf-o"></i><span class="sr-only">CV en:</span><a href="https://drive.google.com/file/d/1TLX7molf-cwf88hF7IJcNR1oxQpCw4El/view?usp=sharing" target="_blank">CV pdf</a></li>
                                </ul>
                            </div><!--//content-->  
                        </div><!--//section-inner-->                 
