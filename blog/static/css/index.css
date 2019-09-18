@@ -117,6 +117,9 @@ html {
     height: auto;
 }
 
+.img-circle {
+  border-radius: 22% !important;
+}
 
 /*=======header======*/
 .header{
@@ -604,4 +607,28 @@ html {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
+}
+
+/*========Comments==========*/
+.comment-form{
+  width: 50% !important;
+}
+
+.comment{
+  height: 70px !important;
+}
+
+.comment-img{
+  margin-right: 1%;
+  height: 50px;
+  width: 50px;
+}
+
+.comment-name{
+  font-size: 24px;
+  margin: 0;
+}
+
+.comment-block{
+  margin-bottom: 3%;
 }
