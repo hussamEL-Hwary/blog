@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Hossam El-Hwary{% endblock %}
-
+{% load static %}
+{% load humanize %}
 
 {% block content %}
 <div class="row">
@@ -18,26 +19,39 @@
 
     </div>
 
+    
     <div class="row">
         <div class="col-md-12">
-            <h2>Leave your stuiped comment!</h2>
+            <h2>Leave your comment!</h2>
+            <section class="comment-form">
             <form accept="{%url 'blog:post' tutorial.pk%}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <div class="form-group">
+                <div class="form-group comment">
                     {{form.comment}}
                 </div>
                 {% if user.is_authenticated %}
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-success">Comment</button>
                 {%else%}
-                    <a href="{%url 'blog:login'%}">Login</a><p>to comment</p>
+                    <strong><a href="{%url 'blog:login'%}">Login</a> <span> to comment</span></strong>
                 {%endif%}
             </form>
+        </section>
+        <hr>
+
             {%for comment in comments%}
-            <h3> {{comment.content}} </h3>
-            <h1> {{comment.user.username}} </h1>
+                <div class="comment-block">
+                    <img class="float-left img-circle comment-img" src="{% static 'imgs/user.png' %}" alt="avatar">
+                    <div class="media-body">
+                      <h5 class="custom-heading comment-name">{{comment.user.username}}</h5>
+                      <p class="card-text">
+                            <small class="text-muted">{{comment.created_at|naturaltime}}</small>
+                        </p>
+                      <p>{{comment.content}}</p>
+                    </div>
+                  </div>
+
         {%endfor%}
         </div>
-
     </div>
 
 </div>
