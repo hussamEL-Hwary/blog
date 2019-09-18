@@ -6,6 +6,7 @@ from ratelimit.decorators import ratelimit
 from django.contrib import messages
 from django.contrib.gis.geoip2 import GeoIP2
 
+
 def homepage(request):
     '''
     blog home page with the latest 6 posts and categories
@@ -22,8 +23,8 @@ def homepage(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     g = GeoIP2()
-    lat_long = g.lat_lon('197.35.226.89')
-    visitor = VisitorInfo(country=g.country(ip)['country_name'], 
+    lat_long = g.lat_lon(ip)
+    visitor = VisitorInfo(country=g.country(ip)['country_name'],
                           city=g.city(ip)['city'],
                           lat=lat_long[0],
                           longt=lat_long[1],
@@ -34,9 +35,9 @@ def homepage(request):
     categories = Category.objects.all()
     latest_items = Tutorial.objects.all().order_by('-created_at')[:6]
     context = {
-        'latest_items': latest_items, 
+        'latest_items': latest_items,
         'categories': categories}
-    return render(request, 'home.html',context=context)
+    return render(request, 'home.html', context=context)
 
 
 def blog_post(request, post_id):
@@ -54,7 +55,7 @@ def blog_post(request, post_id):
     except Tutorial.DoesNotExist:
         raise Http404
     # comments related to post
-    post_comments = Comment.objects.filter(tutorial__pk=tutorial.pk).all() 
+    post_comments = Comment.objects.filter(tutorial__pk=tutorial.pk).all()
     form = CommentForm()
     if request.method == 'POST':
         if not request.user.is_authenticated:
@@ -71,10 +72,10 @@ def blog_post(request, post_id):
             comment.save()
             tutorial.commented()
             return redirect('blog:post', post_id=tutorial.pk)
-    context = {'tutorial': tutorial, 
+    context = {'tutorial': tutorial,
                'categories': categories,
-               'form': form, 
-               'comments':post_comments
+               'form': form,
+               'comments': post_comments
                }
     return render(request, 'post.html', context=context)
 
@@ -98,9 +99,9 @@ def category_posts(request, slug):
     categories = Category.objects.all()
     tut_count = len(related_tutorials)
     context = {'latest_items': related_tutorials,
-                'categories': categories,
-                'category': category,
-                'tut_count': tut_count}
+               'categories': categories,
+               'category': category,
+               'tut_count': tut_count}
     return render(request, 'category_posts.html', context=context)
 
 
@@ -124,7 +125,8 @@ def visitor_message(request):
                 body=form.cleaned_data["body"]
             )
             message.save()
-            messages.add_message(request, messages.SUCCESS, 'Thanks! message delivered successfully')
+            messages.add_message(request, messages.SUCCESS,
+                                 'Thanks! message delivered successfully')
             return redirect("blog:homepage")
 
     return render(request, 'contact_me.html', context={"form": form})
