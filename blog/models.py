@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
+from datetime import datetime
 
 
 
@@ -34,6 +34,7 @@ class Message(models.Model):
     author = models.CharField(max_length=60, default="visitor")
     email = models.CharField(max_length=120)
     body = models.TextField()
+    created_at = models.DateTimeField(default=datetime.now)
 
     def __str__(self):
         return self.author
