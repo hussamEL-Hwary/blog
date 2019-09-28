@@ -22,6 +22,7 @@ def homepage(request):
         ip = x_forwarded_for.split(',')[-1].strip()
     else:
         ip = request.META.get('REMOTE_ADDR')
+    ip = "197.35.88.238"
     g = GeoIP2()
     lat_long = g.lat_lon(ip)
     visitor = VisitorInfo(country=g.country(ip)['country_name'],
@@ -40,7 +41,7 @@ def homepage(request):
     return render(request, 'home.html', context=context)
 
 
-def blog_post(request, post_id):
+def blog_post(request, post_slug):
     '''
     get post by id
     Args:
@@ -51,7 +52,7 @@ def blog_post(request, post_id):
     '''
     categories = Category.objects.all()
     try:
-        tutorial = Tutorial.objects.get(pk=post_id)
+        tutorial = Tutorial.objects.get(slug=post_slug)
     except Tutorial.DoesNotExist:
         raise Http404
     # comments related to post

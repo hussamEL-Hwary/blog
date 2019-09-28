@@ -14,6 +14,7 @@ class Category(models.Model):
         return self.name
 
 class Tutorial(models.Model):
+    slug = models.CharField(max_length=200, default="1")
     title = models.CharField(max_length=200)
     content = models.TextField()
     min_read = models.IntegerField()
@@ -51,6 +52,7 @@ class VisitorInfo(models.Model):
     lat = models.CharField(max_length=60)
     longt = models.CharField(max_length=60)
     ip = models.CharField(max_length=60)
+    created_at = models.DateTimeField(default=datetime.now)
 
     def __str__(self):
-        return self.ip
+        return self.country
