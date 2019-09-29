@@ -40,6 +40,10 @@ html {
     font-weight: bold;
 }
 
+.post-info{
+  margin-bottom: 6%;
+}
+
 .card-text small:after {
     content: "";
     display: inline-block;
