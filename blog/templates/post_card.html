@@ -1,10 +1,10 @@
 {% for aricle in latest_items %}
 <div class="card mb-3 post-card">
         <div class="row no-gutters">
-          <div class="col-md-2">
+          <div class="col-md-3">
             <img src="{{aricle.img_url}}" class="card-img img-responsive post-img" alt="...">
           </div>
-          <div class="col-md-10">
+          <div class="col-md-9">
             <div class="card-body">
               <a href="{% url 'blog:post' aricle.slug%}"> <h3 class="card-title post-title">{{aricle.title}}</h3></a>
               <p class="card-text">
@@ -13,10 +13,11 @@
                 <a href="#"> <span class="text-muted">{{aricle.comments}} comment{{aricle.comments|pluralize}}</span> </a>
               </p>
               <p class="card-text">
-                {{aricle.content | slice:":400" |safe}}...
+                {{aricle.content|slice:":200"|safe}}...
               </p>
-              <a class="more-link" href="{% url 'blog:post' aricle.pk%}">Read more &rarr;</a>
+              <a class="more-link" href="{% url 'blog:post' aricle.slug%}"></a>
             </div>
+            
           </div>
         </div>
       </div>
