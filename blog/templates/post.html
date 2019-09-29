@@ -8,6 +8,18 @@
     <div class="col-md-8">
         <div class="row">
             <h2 class="text-center">{{tutorial.title}}</h2>
+            <p class="card-text text-center post-info">
+                <small class="text-muted">Created at: {{tutorial.updated_at|date:"D d M Y"}}</small>
+                <small class="text-muted">Last updated: {{tutorial.updated_at|naturaltime}}</small>
+                <small class="text-muted">{{tutorial.min_read}} min read</small>
+                <span class="text-muted">Category{{tutorial.category.all|pluralize}}: 
+                    {% for category in tutorial.category.all%}
+                     {{ category.name }}
+                     {%endfor%}
+                    
+                </span>
+                
+              </p>
             <section>
                 {{tutorial.content | safe}}
             </section>
