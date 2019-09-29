@@ -22,7 +22,6 @@ def homepage(request):
         ip = x_forwarded_for.split(',')[-1].strip()
     else:
         ip = request.META.get('REMOTE_ADDR')
-    ip = "197.35.88.238"
     g = GeoIP2()
     lat_long = g.lat_lon(ip)
     visitor = VisitorInfo(country=g.country(ip)['country_name'],
@@ -34,7 +33,7 @@ def homepage(request):
     visitor.save()
 
     categories = Category.objects.all()
-    latest_items = Tutorial.objects.all().order_by('-created_at')[:6]
+    latest_items = Tutorial.objects.all().order_by('-updated_at')[:6]
     context = {
         'latest_items': latest_items,
         'categories': categories}
