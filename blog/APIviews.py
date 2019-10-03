@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
-from .models import Tutorial
-from .serializers import TutorialSerializer
+from .models import Tutorial, Category
+from .serializers import TutorialSerializer, CategorySerializer
 from rest_framework.response import Response
 from rest_framework.views import status
 
@@ -22,3 +22,10 @@ class PostDetail(APIView):
                 data={"message": "post not found"},
                 status=status.HTTP_404_NOT_FOUND
             )
+
+
+class CategoryView(APIView):
+    def get(self, request):
+        categories = Category.objects.all()
+        data = CategorySerializer(categories, many=True).data
+        return Response(data)
