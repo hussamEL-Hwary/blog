@@ -29,3 +29,21 @@ class CategoryView(APIView):
         categories = Category.objects.all()
         data = CategorySerializer(categories, many=True).data
         return Response(data)
+
+
+# get all posts in specific category
+class CategoryPostsView(APIView):
+    def get(self, request, slug):
+        try:
+            category = Category.objects.get(category_slug=slug)
+        except Category.DoesNotExist:
+            return Response(
+                data={"message": "category does not exist"},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        # related posts
+
+        posts = Tutorial.objects.filter(category=category).all()
+        
+        data = TutorialSerializer(posts, many=True).data
+        return Response(data)
