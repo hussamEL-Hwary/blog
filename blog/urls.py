@@ -1,5 +1,7 @@
 from django.urls import path, include
 from . import views
+from . import APIviews
+
 
 
 app_name = 'blog'
@@ -9,5 +11,7 @@ urlpatterns=[
     path("category/<slug>", views.category_posts, name="category_posts"),
     path("contact-me/", views.visitor_message, name="message"),
     path("login/", views.login, name="login"),
-    path("about-me/", views.about_me, name="aboutme")
+    path("about-me/", views.about_me, name="aboutme"),
+    path("post/JSON/", APIviews.PostView.as_view(), name="posts_json")
+
 ]
