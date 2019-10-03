@@ -14,5 +14,6 @@ urlpatterns=[
     path("about-me/", views.about_me, name="aboutme"),
     path("post/JSON/", APIviews.PostView.as_view(), name="posts_json"),
     path("post/<slug>/JSON/", APIviews.PostDetail.as_view(), name="post_detail"),
+    path("category/JSON/", APIviews.CategoryView.as_view(), name="categories_json")
 
 ]
