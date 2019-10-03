@@ -47,6 +47,7 @@
                             <li><a class="navbar-brand nav-edit" href="{% url 'blog:homepage'  %}">Blog posts</a></li> 
                             <li><a class="navbar-brand nav-edit" href="{% url 'blog:aboutme'%}">Who am I?</a></li>  
                             <li><a class="navbar-brand nav-edit" href="{%url 'blog:message'%}">Contact me</a></li>
+                            <li><a class="navbar-brand nav-edit" href="{%url 'blog:api_docs'%}">API</a></li>
                             {%if user.is_authenticated%}
                             <li><a class="navbar-brand nav-edit" href="{% url 'logout'%}">Logout</a></li>
                             {%else%}
