@@ -56,6 +56,10 @@ TINYMCE_DEFAULT_CONFIG = {
     }
 
 
+REST_FRAMEWORK = {
+  'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -70,6 +74,7 @@ INSTALLED_APPS = [
     'tinymce',
     'django.contrib.humanize',
     'rest_framework',
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
@@ -115,8 +120,14 @@ AUTHENTICATION_BACKENDS = (
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
+SWAGGER_SETTINGS = {
+    'SHOW_REQUEST_HEADERS': True,
+    'USE_SESSION_AUTH': False
+}
+
+
 # social login
-LOGIN_URL = 'login'
+#LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
