@@ -12,6 +12,7 @@ urlpatterns=[
     path("contact-me/", views.visitor_message, name="message"),
     path("login/", views.login, name="login"),
     path("about-me/", views.about_me, name="aboutme"),
-    path("post/JSON/", APIviews.PostView.as_view(), name="posts_json")
+    path("post/JSON/", APIviews.PostView.as_view(), name="posts_json"),
+    path("post/<slug>/JSON/", APIviews.PostDetail.as_view(), name="post_detail"),
 
 ]
