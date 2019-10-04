@@ -133,11 +133,11 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 
-SOCIAL_AUTH_GITHUB_KEY = '72884cdee33968e9b6c9'
-SOCIAL_AUTH_GITHUB_SECRET = '032607e844387e889727329ef93cea38cb059a2d'
+SOCIAL_AUTH_GITHUB_KEY = '##################'
+SOCIAL_AUTH_GITHUB_SECRET = '####################################'
 
-SOCIAL_AUTH_FACEBOOK_KEY = '382168616028870'
-SOCIAL_AUTH_FACEBOOK_SECRET = '263c61883e3e8d92ccb4c48895064cbc'
+SOCIAL_AUTH_FACEBOOK_KEY = '##################'
+SOCIAL_AUTH_FACEBOOK_SECRET = '####################################'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
