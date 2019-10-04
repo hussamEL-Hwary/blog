@@ -45,14 +45,3 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     tutorial = models.ForeignKey(Tutorial, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-class VisitorInfo(models.Model):
-    country = models.CharField(max_length=100, null=True)
-    city = models.CharField(max_length=100, null=True)
-    lat = models.CharField(max_length=60)
-    longt = models.CharField(max_length=60)
-    ip = models.CharField(max_length=60)
-    created_at = models.DateTimeField(default=datetime.now)
-
-    def __str__(self):
-        return self.country
