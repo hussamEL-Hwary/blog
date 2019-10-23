@@ -1,25 +1,28 @@
-{% for aricle in latest_items %}
-<div class="card mb-3 post-card">
+{% for aricle in posts %}
+    <div class="card mb-3 post-card">
         <div class="row no-gutters">
-          <div class="col-md-3">
-            <img src="{{aricle.img_url}}" class="card-img img-responsive post-img" alt="...">
-          </div>
-          <div class="col-md-9">
-            <div class="card-body">
-              <a href="{% url 'blog:post' aricle.slug%}"> <h3 class="card-title post-title">{{aricle.title}}</h3></a>
-              <p class="card-text">
-                <small class="text-muted">Last updated {{aricle.updated_at|date:"D d M Y"}}</small>
-                <small class="text-muted">{{aricle.min_read}} min read</small>
-                <a href="#"> <span class="text-muted">{{aricle.comments}} comment{{aricle.comments|pluralize}}</span> </a>
-              </p>
-              <p class="card-text">
-                {{aricle.content|slice:":200"|safe}}...
-              </p>
-              <a class="more-link" href="{% url 'blog:post' aricle.slug%}"></a>
+            <div class="col-md-3">
+                <img src="{{ aricle.img_url }}" class="card-img img-responsive post-img" alt="...">
             </div>
-            
-          </div>
-        </div>
-      </div>
+            <div class="col-md-9">
+                <div class="card-body">
+                    <a href="{% url 'blog:post' aricle.slug %}"><h3
+                            class="card-title post-title">{{ aricle.title }}</h3></a>
+                    <p class="card-text">
+                        <small class="text-muted">Last updated {{ aricle.updated_at|date:"D d M Y" }}</small>
+                        <small class="text-muted">{{ aricle.min_read }} min read</small>
+                        <a href="#"> <span
+                                class="text-muted">{{ aricle.comments }} comment{{ aricle.comments|pluralize }}</span>
+                        </a>
+                    </p>
+                    <p class="card-text">
+                        {{ aricle.content|slice:":200"|safe }}...
+                    </p>
+                    <a class="more-link" href="{% url 'blog:post' aricle.slug %}"></a>
+                </div>
 
-      {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endfor %}

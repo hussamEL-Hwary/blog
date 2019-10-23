@@ -3,19 +3,22 @@
 
 
 {% block content %}
-<div class="row">
-    <div class="col-md-8">
-        <div class="row">
-        <h2 class="text-center">POSTS</h2> 
-          {% include 'post_card.html' %}
-      </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <h2 class="text-center">POSTS</h2>
+                {% include 'post_card.html' %}
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            {% include 'categories_block.html' %}
+
+        </div>
     </div>
 
-    <div class="col-md-4">
-      {% include 'categories_block.html' %}
-
+    <div class="row align-items-center justify-content-center">
+        {% include "pagination/pagination.html" with page=posts %}
     </div>
-</div>
-
 
 {% endblock %}

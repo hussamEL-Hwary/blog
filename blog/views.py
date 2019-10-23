@@ -1,3 +1,5 @@
+from django.core.paginator import Paginator
+from django.conf import settings
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
 from .models import Category, Tutorial, Message, Comment
@@ -15,9 +17,14 @@ def homepage(request):
         list: blog categories
     '''
     categories = Category.objects.all()
-    latest_items = Tutorial.objects.all().order_by('-updated_at')[:6]
+    posts = Tutorial.objects.all()
+
+    paginator = Paginator(posts, settings.POST_PER_PAGE)
+    page = request.GET.get('page', 1)
+    posts = paginator.get_page(page)
+
     context = {
-        'latest_items': latest_items,
+        'posts': posts,
         'categories': categories}
     return render(request, 'home.html', context=context)
 
