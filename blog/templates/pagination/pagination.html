@@ -1,0 +1,22 @@
+{% if page.has_other_pages %}
+    <ul class="pagination justify-content-center">
+        {% if page.has_previous %}
+            <li><a href="?page={{ page.previous_page_number }}">&laquo;</a></li>
+            <li><a href="?page={{ page.previous_page_number }}">previous</a>
+            </li>
+        {% else %}
+            <li class="disabled"><span>&laquo;</span></li>
+        {% endif %}
+
+        <li class="active"><span>Page {{ page.number }} of {{ page.paginator.num_pages }}.<span class="sr-only">(current)</span></span></li>
+
+        {% if page.has_next %}
+            <li><a href="?page={{ page.next_page_number }}">next</a></li>
+
+            <li><a href="?page={{ page.paginator.num_pages }}">&raquo;</a></li>
+        {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+
+        {% endif %}
+    </ul>
+{% endif %}
